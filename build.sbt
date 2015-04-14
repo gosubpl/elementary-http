@@ -14,7 +14,7 @@ libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.1.0"
 
 libraryDependencies += "io.shaka" %% "naive-http" % "70"
 
-libraryDenpendencies += "io.shaka" %% "naive-http-server" % "37"
+libraryDependencies += "io.shaka" %% "naive-http-server" % "37"
 
 libraryDependencies ++= Seq(
   "net.databinder"    %% "unfiltered-filter"         % unfilteredVersion,
