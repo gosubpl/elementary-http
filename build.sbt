@@ -1,4 +1,4 @@
-name := "elementary-http"
+name := "elementaryhttp"
 
 version := "1.0"
 
@@ -19,5 +19,6 @@ libraryDependencies += "io.shaka" %% "naive-http-server" % "37"
 libraryDependencies ++= Seq(
   "net.databinder"    %% "unfiltered-filter"         % unfilteredVersion,
   "net.databinder"    %% "unfiltered-netty-server"   % unfilteredVersion,
-  "net.databinder"    %% "unfiltered-netty"          % unfilteredVersion
+  "net.databinder"    %% "unfiltered-netty"          % unfilteredVersion,
+  "net.databinder"    %% "unfiltered-jetty"          % unfilteredVersion
 )
