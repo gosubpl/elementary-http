@@ -1,5 +1,5 @@
 import pl.gosub.elementaryhttp.Request.{POST, GET}
-import pl.gosub.elementaryhttp.{Response, HttpStatus, ElementaryHttpServer}
+import pl.gosub.elementaryhttp.{Response, HttpStatus, ElementaryHttpServer, USER_AGENT}
 
 object HelloElementaryHttpServer extends App {
 	println("Hello")
@@ -7,7 +7,7 @@ object HelloElementaryHttpServer extends App {
 	httpServer.handler {
 		case GET("/hello") => Response(HttpStatus(200), Nil, Some("Hello World!"))
 		case GET("/goodbye") => Response(HttpStatus(200), Nil, Some("Goodbye!"))
-		case request@POST("/rest") => Response(HttpStatus(200), Nil, Some("Rest response!"))
+		case request@POST("/rest") => Response(HttpStatus(200), Nil, Some(s"Rest response! Request user agent was ${request.header(USER_AGENT)}"))
 		case _ => Response(HttpStatus(404), Nil, Some("not found!"))
 	}
 }

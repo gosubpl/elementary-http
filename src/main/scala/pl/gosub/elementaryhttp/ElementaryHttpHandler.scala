@@ -51,7 +51,7 @@ object HttpConversions {
   )
   import scala.collection.JavaConversions.mapAsScalaMap
   import scala.collection.JavaConversions.collectionAsScalaIterable
-  private def stringToHeader(s: String): HttpHeader = headers.find(_.name == s).getOrElse(UNKNOWN_HEADER)
+  private def stringToHeader(s: String): HttpHeader = headers.find(_.name.toLowerCase == s.toLowerCase).getOrElse(UNKNOWN_HEADER)
   def toHeaders(rawHeaders: java.util.Map[String, java.util.List[String]]) : List[Header] = {
     val rhl = rawHeaders.toList
     val rh = rhl.map {case (headerName, valuesList) => (stringToHeader(headerName), valuesList.headOption.getOrElse(""))}
