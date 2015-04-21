@@ -71,4 +71,14 @@ object HelloExercises extends App {
   val admin3 = regular ~> PromoteUser.toAdmin
   printUser(admin3)
 
+  println(admin3)
+
+  implicit def userToString(u: User): String = {s"User(${u.name}, ${u.score}, ${u.balance})"}
+
+  def printlnString(s: String): Unit = {
+    println(s)
+  }
+
+  printlnString(admin3)
+
 }
