@@ -1,7 +1,7 @@
 import pl.gosub.elementaryhttp.Request.{POST, GET}
 import pl.gosub.elementaryhttp.{Response, HttpStatus, ElementaryHttpServer}
 
-object Hello extends App {
+object HelloElementaryHttpServer extends App {
 	println("Hello")
 	val httpServer = ElementaryHttpServer(9124).handler(request => Response(HttpStatus(200), Nil, Some("Hello World!"))).start()
 	httpServer.handler {

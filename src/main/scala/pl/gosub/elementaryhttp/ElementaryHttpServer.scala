@@ -3,7 +3,7 @@ package pl.gosub.elementaryhttp
 import java.net.InetSocketAddress
 
 import com.sun.net.httpserver.HttpServer
-import pl.gosub.elementaryhttp.Http._
+import Http._
 
 class ElementaryHttpServer(private val usePort: Int = 9123) {
   val server = HttpServer.create(new InetSocketAddress(usePort), 0)
@@ -14,7 +14,7 @@ class ElementaryHttpServer(private val usePort: Int = 9123) {
     val startedAt = System.nanoTime()
     server.start()
     val elapsedTime = BigDecimal((System.nanoTime() - startedAt) / 1000000.0).formatted("%.2f")
-    println(s"naive-http-server started on port ${port()} in $elapsedTime milli seconds")
+    println(s"elementary-http-server started on port ${port()} in $elapsedTime milli seconds")
     this
   }
 
