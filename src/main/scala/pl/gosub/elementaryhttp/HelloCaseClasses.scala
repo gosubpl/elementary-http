@@ -52,4 +52,14 @@ object HelloCaseClasses extends App {
   println(tellMeTheType(rtp))
   println(tellMeTheType(rtp2))
 
+  val test = true
+
+  val r: RequestT = if (test) {
+    GETX
+  } else {
+    PUTX
+  }
+
+  println(r)
+
 }
